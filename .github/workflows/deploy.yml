@@ -19,4 +19,4 @@ jobs:
 
     - name: Deploy Bicep template
       run: |
-        az deployment group create --name CopilotDeployment --resource-group SecCopilot --template-file ./main.bicep --parameters ./main.bicepparam
+        az deployment group create --name CopilotDeployment --resource-group SecurityCopilot --template-file ./main.bicep --parameters ./main.bicepparam
