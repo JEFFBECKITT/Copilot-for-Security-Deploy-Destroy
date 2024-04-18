@@ -3,7 +3,7 @@ name: Deploy Resources
 on:
   workflow_dispatch: # Allows you to run the workflow manually
   schedule:
-    - cron: '0 8 * * 1-5' # Runs at 8 AM UTC, Monday to Friday
+    - cron: '0 23 * * 1-5' # Runs at 11 PM UTC / 9 AM AEST, Monday to Friday
 
 jobs:
   deploy:
@@ -15,8 +15,8 @@ jobs:
     - name: Login to Azure
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.AZUREKEY }}
 
     - name: Deploy Bicep template
       run: |
-        az deployment group create --name CopilotDeployment --resource-group CopilotTest --template-file ./main.bicep --parameters ./main.bicepparam
+        az deployment group create --name CopilotDeployment --resource-group SecCopilot --template-file ./main.bicep --parameters ./main.bicepparam
