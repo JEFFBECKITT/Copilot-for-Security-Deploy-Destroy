@@ -1,6 +1,6 @@
 using 'main.bicep'
 
-param capacityName = 'SynergieCopilot'
-param geo = 'US'
+param capacityName = 'TEST-SecurityCopilot'
+param geo = 'ANZ'
 param numberOfUnits = 1
 param crossGeoCompute = 'Allowed'
